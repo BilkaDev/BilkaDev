@@ -1,0 +1,21 @@
+@mixin burgerBtn {
+	position: absolute;
+	right: 0;
+	height: 5px;
+	content: '';
+	background-color: $pure-white;
+	transition: width 0.3s;
+}
+
+@mixin heroImage() {
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+}
+
+@mixin heroImage() {
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+}
+
