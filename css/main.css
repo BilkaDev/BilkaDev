@@ -572,10 +572,21 @@ body {
   color: #393e46;
 }
 
+.projects__cards-boxes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
 .projects__card-box {
   position: relative;
   margin: 1em 0;
-  height: 450px;
+  min-width: 320px;
+  height: 500px;
   color: #181c22;
   text-align: center;
   -webkit-perspective: 1000px;
@@ -767,6 +778,9 @@ body {
   }
   .projects__filter {
     font-size: 2.8rem;
+  }
+  .projects__card-box {
+    width: 500px;
   }
   .education .text {
     -ms-flex-preferred-size: 50%;

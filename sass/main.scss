@@ -315,11 +315,17 @@ body {
 			color: $grey;
 		}
 	}
-
+	&__cards-boxes {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-around;
+	}
 	&__card-box {
 		position: relative;
 		margin: 1em 0;
-		height: 450px;
+		min-width: 320px;
+
+		height: 500px;
 		color: $dark;
 		text-align: center;
 		perspective: 1000px;
@@ -472,6 +478,10 @@ body {
 	.projects {
 		&__filter {
 			font-size: 2.8rem;
+		}
+
+		&__card-box {
+			width: 500px;
 		}
 	}
 	.education {
