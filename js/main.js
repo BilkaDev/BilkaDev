@@ -19,13 +19,15 @@ function handleActiveNav() {
 	})
 
 	this.classList.add('active')
+	if (window.innerWidth < 768) {
+		handleNavItemsAnimation()
+	}
 }
 
 function handleNavItemsAnimation() {
 	let delayTime = 0
 
 	allNavItems.forEach(item => {
-		console.log(item)
 		item.classList.toggle('nav-items-animation')
 		item.style.animationDelay = `.${delayTime}s`
 		delayTime += 1
@@ -43,7 +45,6 @@ function handleFilters() {
 		const findFilterItems = item.dataset.filter
 		item.style.display = 'none'
 
-		console.log()
 		if (findFilterItems.includes(filterItem)) {
 			item.style.display = 'block'
 		}
@@ -52,13 +53,26 @@ function handleFilters() {
 
 const handleObserver = () => {
 	const currentSection = window.scrollY
+	let currentSectionName = 'about'
 
-	allSection.forEach(section => {
-		if (section.childNodes[1].classList.contains('dark-block') && section.offsetTop <= currentSection - 150) {
-			navBtnBars.classList.add('nav__burger-btn-bars--color')
-		} else if (!section.childNodes[1].classList.contains('dark-block') && section.offsetTop <= currentSection + 60) {
-			navBtnBars.classList.remove('nav__burger-btn-bars--color')
+	allSection.forEach((section, index) => {
+		const sectionTop = section.offsetTop
+		if (currentSection >= sectionTop - 60) {
+			currentSectionName = section.getAttribute('id')
 		}
+
+		allNavItems.forEach(item => {
+			item.classList.remove('active')
+			if (item.getAttribute('href').slice(1) === currentSectionName) {
+				item.classList.add('active')
+			}
+
+			if (section.childNodes[1].classList.contains('dark-block') && section.offsetTop <= currentSection - 150) {
+				navBtnBars.classList.add('nav__burger-btn-bars--color')
+			} else if (!section.childNodes[1].classList.contains('dark-block') && section.offsetTop <= currentSection + 60) {
+				navBtnBars.classList.remove('nav__burger-btn-bars--color')
+			}
+		})
 	})
 }
 

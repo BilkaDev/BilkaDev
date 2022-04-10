@@ -40,7 +40,6 @@ const draw = () => {
 
 let interval = setInterval(draw, 1000 / state.fps)
 fpsCtrl.onFinishChange(fps => {
-	console.log(fps)
 	if (interval) {
 		clearInterval(interval)
 	}
