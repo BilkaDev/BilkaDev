@@ -2,8 +2,8 @@
 	position: absolute;
 	right: 0;
 	height: 5px;
+	background-color: #fff;
 	content: '';
-	background-color: $pure-white;
 	transition: width 0.3s;
 }
 
@@ -18,4 +18,3 @@
 	background-position: center;
 	background-attachment: fixed;
 }
-

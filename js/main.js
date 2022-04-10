@@ -1,6 +1,8 @@
 const nav = document.querySelector('.nav__items')
 const navBtn = document.querySelector('.nav__burger-btn')
 const allNavItems = document.querySelectorAll('.nav__item')
+const navBtnBars = document.querySelector('.nav__burger-btn-bars')
+const allSection = document.querySelectorAll('.section')
 
 // filters project
 const allFilterItems = document.querySelectorAll('.projects__filter')
@@ -48,6 +50,18 @@ function handleFilters() {
 	})
 }
 
+const handleObserver = () => {
+	const currentSection = window.scrollY
+
+	allSection.forEach(section => {
+		if (section.childNodes[1].classList.contains('dark-block') && section.offsetTop <= currentSection - 150) {
+			navBtnBars.classList.add('nav__burger-btn-bars--color')
+		} else if (!section.childNodes[1].classList.contains('dark-block') && section.offsetTop <= currentSection + 60) {
+			navBtnBars.classList.remove('nav__burger-btn-bars--color')
+		}
+	})
+}
+
 navBtn.addEventListener('click', handleNav)
 
 allNavItems.forEach(item => {
@@ -56,3 +70,4 @@ allNavItems.forEach(item => {
 allFilterItems.forEach(item => {
 	item.addEventListener('click', handleFilters)
 })
+window.addEventListener('scroll', handleObserver)

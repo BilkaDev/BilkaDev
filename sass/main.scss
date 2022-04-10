@@ -114,6 +114,12 @@ body {
 		&-bars::before {
 			@include burgerBtn;
 		}
+		&-bars--color,
+		&-bars--color::after,
+		&-bars--color::before {
+			background-color: black;
+		}
+
 		&-bars {
 			width: 100%;
 			&::after {

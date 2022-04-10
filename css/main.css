@@ -275,10 +275,14 @@ body {
   position: absolute;
   right: 0;
   height: 5px;
+  background-color: #fff;
   content: '';
-  background-color: #eeeeee;
   -webkit-transition: width 0.3s;
   transition: width 0.3s;
+}
+
+.nav__burger-btn-bars--color, .nav__burger-btn-bars--color::after, .nav__burger-btn-bars--color::before {
+  background-color: black;
 }
 
 .nav__burger-btn-bars {
