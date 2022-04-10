@@ -8,18 +8,11 @@ const allSection = document.querySelectorAll('.section')
 const allFilterItems = document.querySelectorAll('.projects__filter')
 const allFilterCards = document.querySelectorAll('.projects__card-box')
 
-function handleNav() {
-	nav.classList.toggle('nav__items--active')
-	handleNavItemsAnimation()
-}
-function handleActiveNav() {
-	nav.classList.remove('nav__items--active')
-	allNavItems.forEach(item => {
-		item.classList.remove('active')
-	})
+const NAV_WIDTH_MOBILE = 767
 
-	this.classList.add('active')
-	if (window.innerWidth < 768) {
+function handleNav() {
+	if (window.innerWidth < NAV_WIDTH_MOBILE) {
+		nav.classList.toggle('nav__items--active')
 		handleNavItemsAnimation()
 	}
 }
@@ -79,7 +72,7 @@ const handleObserver = () => {
 navBtn.addEventListener('click', handleNav)
 
 allNavItems.forEach(item => {
-	item.addEventListener('click', handleActiveNav)
+	item.addEventListener('click', handleNav)
 })
 allFilterItems.forEach(item => {
 	item.addEventListener('click', handleFilters)
