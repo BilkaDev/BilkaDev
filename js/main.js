@@ -8,6 +8,14 @@ const allSection = document.querySelectorAll('.section')
 const allFilterItems = document.querySelectorAll('.projects__filter')
 const allFilterCards = document.querySelectorAll('.projects__card-box')
 
+// Added show more info in project card
+allFilterCards.forEach(item => {
+	item.addEventListener('mouseover',(e)=>{
+		item.childNodes[3].style.zIndex = 1
+	})
+})
+
+
 const NAV_WIDTH_MOBILE = 767
 
 function handleNav() {

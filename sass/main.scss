@@ -330,7 +330,6 @@ body {
 		position: relative;
 		margin: 1em 0;
 		min-width: 320px;
-
 		height: 500px;
 		color: $dark;
 		text-align: center;
@@ -348,14 +347,31 @@ body {
 	}
 	&__card-img {
 		padding: 2em;
-		height: 100%;
 		border-radius: 8px;
-		background-size: cover;
-		background-image: url('../img/projekttestowy.jpg');
+		background-color: $grey;
+		height: 100%;
 		transition: transform 1s, opacity 1s;
+		img{
+		position: absolute;
+		left: 0;
+		top: 0;
+		height: 100%;
+		width: 100%;
+		border-radius: 8px;
+		}
 	}
 	&__card-img-title {
+		position: absolute;
+		z-index: 1;
+		background-color: $pure-white;
+		border: #000 1px solid;
+		border-radius: 8px;
+		padding: 1rem 2rem;
+		top: 10%;
+		left: 50%;
+		transform: translateX(-50%);
 		font-size: 2.8rem;
+		color: $grey;
 	}
 	&__card-img-info {
 		background-color: $pure-white;
@@ -381,20 +397,62 @@ body {
 		border-radius: 8px;
 		transform: rotateY(180deg);
 		opacity: 0;
+		z-index: -1;
 		transition: transform 1s, opacity 1s;
+		.btn-view-source{
+			display: flex;
+			align-items: center;
+			border-radius: 8px;
+			position: absolute;
+			bottom: 1.5rem;
+			left: auto;
+			right: 10%;
+			width: 40%;
+			&__left{
+				padding: 1rem;
+				border-top-left-radius: 8px;
+				border-bottom-left-radius: 8px;
+				background-color: #00dd00;
+				&:hover{
+					background-color: $blue;
+				}
+				a{
+					text-decoration: none;
+				}
+			}
+			&__right{
+				padding: 1rem;
+				border-top-right-radius: 8px;
+				border-bottom-right-radius: 8px;
+				background-color: #00dd00;
+				&:hover{
+					background-color: $blue;
+				}
+				a{
+					text-decoration: none;
+				}
+			}
+		}
 	}
 
 	&__card-info-title {
 		position: absolute;
+		z-index: 1;
+		background-color: $pure-white;
+		border: #000 1px solid;
+		border-radius: 8px;
+		padding: 1rem 2rem;
+		top: 10%;
 		left: 50%;
 		transform: translateX(-50%);
-		top: 1.2em;
 		font-size: 2.8rem;
+		color: $grey;
 	}
 	&__card-info-list {
 		margin: 0 auto;
 		width: 70%;
 		list-style: none;
+		color: $pure-white;
 		&-item {
 			padding: 1em;
 			font-size: 1.4rem;
@@ -411,6 +469,7 @@ body {
 		border: none;
 		cursor: pointer;
 		background-color: #00dd00;
+		text-decoration: none;
 		&--source {
 			left: auto;
 			right: 10%;
@@ -418,6 +477,7 @@ body {
 		&:hover {
 			background-color: $blue;
 		}
+
 	}
 }
 

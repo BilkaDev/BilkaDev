@@ -444,14 +444,31 @@ body {
 }
 .projects__card-img {
   padding: 2em;
-  height: 100%;
   border-radius: 8px;
-  background-size: cover;
-  background-image: url("../img/projekttestowy.jpg");
+  background-color: #393e46;
+  height: 100%;
   transition: transform 1s, opacity 1s;
 }
+.projects__card-img img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  border-radius: 8px;
+}
 .projects__card-img-title {
+  position: absolute;
+  z-index: 1;
+  background-color: #eeeeee;
+  border: #000 1px solid;
+  border-radius: 8px;
+  padding: 1rem 2rem;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
   font-size: 2.8rem;
+  color: #393e46;
 }
 .projects__card-img-info {
   background-color: #eeeeee;
@@ -476,19 +493,61 @@ body {
   border-radius: 8px;
   transform: rotateY(180deg);
   opacity: 0;
+  z-index: -1;
   transition: transform 1s, opacity 1s;
+}
+.projects__card-info .btn-view-source {
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  position: absolute;
+  bottom: 1.5rem;
+  left: auto;
+  right: 10%;
+  width: 40%;
+}
+.projects__card-info .btn-view-source__left {
+  padding: 1rem;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  background-color: #00dd00;
+}
+.projects__card-info .btn-view-source__left:hover {
+  background-color: #06ced8;
+}
+.projects__card-info .btn-view-source__left a {
+  text-decoration: none;
+}
+.projects__card-info .btn-view-source__right {
+  padding: 1rem;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  background-color: #00dd00;
+}
+.projects__card-info .btn-view-source__right:hover {
+  background-color: #06ced8;
+}
+.projects__card-info .btn-view-source__right a {
+  text-decoration: none;
 }
 .projects__card-info-title {
   position: absolute;
+  z-index: 1;
+  background-color: #eeeeee;
+  border: #000 1px solid;
+  border-radius: 8px;
+  padding: 1rem 2rem;
+  top: 10%;
   left: 50%;
   transform: translateX(-50%);
-  top: 1.2em;
   font-size: 2.8rem;
+  color: #393e46;
 }
 .projects__card-info-list {
   margin: 0 auto;
   width: 70%;
   list-style: none;
+  color: #eeeeee;
 }
 .projects__card-info-list-item {
   padding: 1em;
@@ -505,6 +564,7 @@ body {
   border: none;
   cursor: pointer;
   background-color: #00dd00;
+  text-decoration: none;
 }
 .projects__card-info-btn--source {
   left: auto;
