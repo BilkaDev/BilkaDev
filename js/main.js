@@ -8,13 +8,21 @@ const allSection = document.querySelectorAll('.section')
 const allFilterItems = document.querySelectorAll('.projects__filter')
 const allFilterCards = document.querySelectorAll('.projects__card-box')
 
-// Added show more info in project card
-allFilterCards.forEach(item => {
-	item.addEventListener('mouseover',(e)=>{
-		item.childNodes[3].style.zIndex = 1
-	})
-})
 
+
+allFilterCards.forEach(card => card.addEventListener('mouseover',(e)=>projectViewHandler(e,card)))
+allFilterCards.forEach(card => card.addEventListener('mouseout',(e)=>projectViewHandler(e,card)))
+
+
+
+
+function projectViewHandler(e,card){
+	if(e.type === "mouseover"){
+		setTimeout(()=>{card.childNodes[3].style.zIndex = 1},200)
+	} else if (e.type === "mouseout"){
+		setTimeout(()=>{card.childNodes[3].style.zIndex = -1},200)
+	}
+}
 
 const NAV_WIDTH_MOBILE = 767
 
