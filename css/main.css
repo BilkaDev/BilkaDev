@@ -95,7 +95,6 @@
   .section-heading {
     font-size: 3.6rem;
   }
-
   .section-padding {
     padding: 8em 2em;
   }
@@ -104,7 +103,6 @@
   .section-heading {
     font-size: 4.8rem;
   }
-
   .section-padding {
     padding: 10em 2em;
   }
@@ -429,7 +427,7 @@ body {
   position: relative;
   margin: 1em 0;
   min-width: 320px;
-  height: 500px;
+  height: 520px;
   color: #181c22;
   text-align: center;
   perspective: 1000px;
@@ -464,7 +462,7 @@ body {
   border: #000 1px solid;
   border-radius: 8px;
   padding: 1rem 2rem;
-  top: 10%;
+  top: 5%;
   left: 50%;
   transform: translateX(-50%);
   font-size: 2.8rem;
@@ -537,15 +535,17 @@ body {
   border: #000 1px solid;
   border-radius: 8px;
   padding: 1rem 2rem;
-  top: 10%;
+  top: 5%;
   left: 50%;
   transform: translateX(-50%);
   font-size: 2.8rem;
   color: #393e46;
 }
 .projects__card-info-list {
+  overflow-y: auto;
+  height: 310px;
   margin: 0 auto;
-  width: 70%;
+  width: 85%;
   list-style: none;
   color: #eeeeee;
 }
@@ -653,14 +653,12 @@ body {
     font-size: 4.8rem;
     margin-bottom: 0.3em;
   }
-
   .projects__filter {
     font-size: 2.8rem;
   }
   .projects__card-box {
     width: 500px;
   }
-
   .education .text {
     flex-basis: 50%;
   }
@@ -675,7 +673,6 @@ body {
   .header__box-heading-title {
     font-size: 6rem;
   }
-
   .nav {
     position: sticky;
     top: 0;
@@ -698,7 +695,6 @@ body {
     margin: 0;
     padding: 0 0 0 0.2em;
   }
-
   .about__boxes {
     justify-content: space-around;
     align-items: flex-start;
@@ -722,19 +718,15 @@ body {
   .header .header__box-heading-load {
     font-size: 3rem;
   }
-
   .skills {
     background-image: linear-gradient(45deg, rgba(13, 50, 58, 0.6), rgba(6, 44, 58, 0.542)), url("../img/skills1920.jpg");
   }
-
   .education {
     background-image: linear-gradient(45deg, rgba(13, 50, 58, 0.6), rgba(6, 44, 58, 0.542)), url("../img/education_1920.jpg");
   }
-
   .experience {
     background-image: none;
   }
-
   .contact {
     background-image: linear-gradient(45deg, rgba(13, 50, 58, 0.6), rgba(6, 44, 58, 0.542)), url("../img/contact_1920.jpg");
   }

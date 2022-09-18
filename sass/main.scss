@@ -330,7 +330,7 @@ body {
 		position: relative;
 		margin: 1em 0;
 		min-width: 320px;
-		height: 500px;
+		height: 520px;
 		color: $dark;
 		text-align: center;
 		perspective: 1000px;
@@ -367,7 +367,7 @@ body {
 		border: #000 1px solid;
 		border-radius: 8px;
 		padding: 1rem 2rem;
-		top: 10%;
+		top: 5%;
 		left: 50%;
 		transform: translateX(-50%);
 		font-size: 2.8rem;
@@ -442,15 +442,17 @@ body {
 		border: #000 1px solid;
 		border-radius: 8px;
 		padding: 1rem 2rem;
-		top: 10%;
+		top: 5%;
 		left: 50%;
 		transform: translateX(-50%);
 		font-size: 2.8rem;
 		color: $grey;
 	}
 	&__card-info-list {
+		overflow-y: auto;
+		height: 310px;
 		margin: 0 auto;
-		width: 70%;
+		width: 85%;
 		list-style: none;
 		color: $pure-white;
 		&-item {
