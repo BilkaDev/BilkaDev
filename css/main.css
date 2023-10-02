@@ -314,7 +314,8 @@ body {
 }
 .about__box-img-item {
   width: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .about__box-title {
   text-transform: uppercase;
