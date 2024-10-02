@@ -26,7 +26,7 @@
                 </div>
                 <div class="education__box-items">
                     <div class="education__box-item">
-                        <p>2021 - currently</p>
+                        <p>2021—currently</p>
                     </div>
                     <div class="education__box-text">
                         <p>IT University in Warsaw</p>

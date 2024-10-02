@@ -45,7 +45,7 @@
                     </div>
                     <div class="skills__box-item">
                         <img src="/public/img/icon/tailwind-icon.png" alt="tailwind icon">
-                        <p>Tailwind css</p>
+                        <p>Tailwind CSS</p>
                     </div>
                 </div>
             </div>

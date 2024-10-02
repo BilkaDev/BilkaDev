@@ -27,7 +27,7 @@
                         <p>2023</p>
                     </div>
                     <div class="experience__box-text">
-                        <p>5 months mentoring app development with <a href="https://reskilled.io/"
+                        <p>5-month mentoring app development with <a href="https://reskilled.io/"
                                                                       target="_blank">Reskilled</a>
                         </p>
                     </div>
