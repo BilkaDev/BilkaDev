@@ -4,7 +4,6 @@
         <div class="about__boxes">
             <div class="about__box about__box-img">
                 <img class="about__box-img-item" src="/public/img/about-me.png" alt="Marcin Bilka">
-
             </div>
             <div class="about__box about__box-heading">
                 <h2 class="about__box-title">Who <span>am</span> I</h2>
