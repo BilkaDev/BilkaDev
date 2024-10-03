@@ -11,6 +11,8 @@ class View
         $skills = $params['skills'];
         $projectCategories = $params['projectCategories'];
         $projects = $params['projects'];
+        $educations = $params['educations'];
+        $experiences = $params['experiences'];
         require_once "templates/layout.php";
     }
 }

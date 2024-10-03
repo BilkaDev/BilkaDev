@@ -81,6 +81,18 @@ class Database
         return $result;
     }
 
+    public function getEducations(): array
+    {
+        $query = $this->conn->query("SELECT * FROM education");
+        return $query->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function getExperiences(): array
+    {
+        $query = $this->conn->query("SELECT * FROM experience");
+        return $query->fetchAll(PDO::FETCH_ASSOC);
+    }
+
     /**
      * @param array $config
      * @return array

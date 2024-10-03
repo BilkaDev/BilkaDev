@@ -39,6 +39,8 @@ class Controller
         $paramsView['skills'] = $this->db->getSkills();
         $paramsView['projectCategories'] = $this->db->getProjectsCategories();
         $paramsView['projects'] = $this->db->getProjects();
+        $paramsView['educations'] = $this->db->getEducations();
+        $paramsView['experiences'] = $this->db->getExperiences();
         $this->view->render($paramsView);
     }
 
