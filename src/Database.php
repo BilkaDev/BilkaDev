@@ -1,0 +1,69 @@
+<?php
+declare(strict_types=1);
+
+
+namespace App;
+
+require_once 'src/Exception/ConfigurationException.php';
+require_once 'src/Exception/StorageException.php';
+
+use App\Exception\ConfigurationException;
+use App\Exception\StorageException;
+use PDO;
+use PDOException;
+
+class Database
+{
+    private PDO $conn;
+
+    /**
+     * @throws StorageException
+     * @throws ConfigurationException
+     */
+    public function __construct(array $config)
+    {
+        try {
+            $config = $this->validateConfig($config);
+            $this->createConnection($config);
+        } catch (PDOException $e) {
+            throw new StorageException("Database connection error");
+        }
+    }
+
+    public function getAboutMe(): array
+    {
+        $query = "SELECT * FROM about";
+        $result = $this->conn->query($query, PDO::FETCH_ASSOC);
+        return $result->fetch();
+    }
+
+    /**
+     * @param array $config
+     * @return array
+     * @throws ConfigurationException
+     */
+    private function validateConfig(array $config): array
+    {
+        if (empty($config['host'])
+            || empty($config['port'])
+            || empty($config['database'])
+            || empty($config['user'])) {
+            throw new ConfigurationException('Missing configuration please contact the administrator');
+        }
+        return $config;
+    }
+
+    /**
+     * @param array $config
+     * @return void
+     */
+    private function createConnection(array $config): void
+    {
+        $dsn = "mysql:dbname={$config['database']};host={$config['host']};port={$config['port']}";
+        $this->conn = new PDO(
+            $dsn,
+            $config['user'],
+            $config['password']
+        );
+    }
+}
