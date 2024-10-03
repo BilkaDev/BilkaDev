@@ -60,6 +60,27 @@ class Database
         return $skills;
     }
 
+    public function getProjectsCategories(): array
+    {
+        $query = $this->conn->query("SELECT * FROM project_category");
+        return $query->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function getProjects(): array
+    {
+        $query = $this->conn->query("SELECT * FROM project");
+        $result = $query->fetchAll(PDO::FETCH_ASSOC);
+
+        foreach ($result as &$project) {
+            if (isset($project['techs'])) {
+                $project['techs'] = array_map('trim', explode(';', $project['techs']));
+                $project['sources'] = array_map('trim', explode(';', $project['sources']));
+            }
+        }
+
+        return $result;
+    }
+
     /**
      * @param array $config
      * @return array

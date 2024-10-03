@@ -9,6 +9,8 @@ class View
     {
         $about = $params['about'];
         $skills = $params['skills'];
+        $projectCategories = $params['projectCategories'];
+        $projects = $params['projects'];
         require_once "templates/layout.php";
     }
 }
