@@ -37,6 +37,29 @@ class Database
         return $result->fetch();
     }
 
+    public function getSkills(): array
+    {
+        $skills = [
+            'html' => [],
+            'css' => [],
+            'js' => [],
+            'back-end' => [],
+            'other' => []
+        ];
+
+        $query = $this->conn->query("SELECT * FROM skill ORDER BY category");
+        $results = $query->fetchAll(PDO::FETCH_ASSOC);
+
+        foreach ($results as $row) {
+            $skills[$row['category']][] = [
+                'name' => $row['name'],
+                'image' => $row['image'],
+                'alt' => $row['alt']
+            ];
+        }
+        return $skills;
+    }
+
     /**
      * @param array $config
      * @return array

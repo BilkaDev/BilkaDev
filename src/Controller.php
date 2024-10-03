@@ -36,6 +36,7 @@ class Controller
     public function run()
     {
         $paramsView['about'] = $this->db->getAboutMe();
+        $paramsView['skills'] = $this->db->getSkills();
         $this->view->render($paramsView);
     }
 
